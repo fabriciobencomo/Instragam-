@@ -2,21 +2,20 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
+    <div class="row">
+        <div class="col-3 p-5">
+            <img style="height: 70%;" src="data:image/png;base64,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" class="rounded-circle" alt="Foto Perfil">
+        </div>
+        <div class="col-9 pt-5">
+            <div><h1>playstation</h1></div>
+            <div class="d-flex">
+                <div class="pr-4"><strong>1913 </strong>post</div>
+                <div class="pr-4"><strong>28.8m </strong>followers</div>
+                <div class="pr-4"><strong>60 </strong>follow</div>
             </div>
+            <div class="pt-3 font-weight-bold">Playstation</div>
+            <div class="">PlayStation's official Instagram! New photos, events, behind-the-scenes and more. Managed by North America & Europe. Titles rated E-M / PEGI 3-18</div>
+            <div><a href="www.playstation.com">playstation.com</a></div>
         </div>
     </div>
 </div>
